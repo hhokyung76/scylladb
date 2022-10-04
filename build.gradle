@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.4'
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // https://mvnrepository.com/artifact/com.scylladb/java-driver-query-builder
+
+    implementation 'com.scylladb:java-driver-core:4.14.1.0'
+    implementation 'com.scylladb:java-driver-query-builder:4.14.1.0'
+    // https://mvnrepository.com/artifact/com.datastax.oss/java-driver-query-builder
+    implementation 'com.datastax.oss:java-driver-query-builder:4.15.0'
+
+    // https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core
+    implementation 'com.datastax.cassandra:cassandra-driver-core:4.0.0'
+    // https://mvnrepository.com/artifact/org.apache.tinkerpop/gremlin-core
+    implementation 'org.apache.tinkerpop:gremlin-core:3.6.1'
+    // https://mvnrepository.com/artifact/org.apache.tinkerpop/tinkergraph-gremlin
+    implementation 'org.apache.tinkerpop:tinkergraph-gremlin:3.6.1'
+
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
