@@ -4,17 +4,17 @@ package com.example.scylladb;
 //import com.datastax.driver.core.ResultSet;
 //import com.datastax.driver.core.Row;
 //import com.datastax.driver.core.Session;
+
 import com.datastax.oss.driver.api.core.CqlSession;
 import com.datastax.oss.driver.api.core.cql.*;
-import com.datastax.oss.driver.api.querybuilder.insert.InsertInto;
 import com.datastax.oss.driver.api.querybuilder.select.Select;
 
 import java.net.InetSocketAddress;
-//improt com.datastax.
-import static com.datastax.oss.driver.api.querybuilder.QueryBuilder.*;
+
+import static com.datastax.oss.driver.api.querybuilder.QueryBuilder.selectFrom;
 
 
-public class Test {
+public class Test2 {
     public static void main(String[] args) {
         //Cluster cluster = Cluster.builder().addContactPoints("scylla-node1", "scylla-node2", "scylla-node3").build();
         CqlSession session = CqlSession.builder()
